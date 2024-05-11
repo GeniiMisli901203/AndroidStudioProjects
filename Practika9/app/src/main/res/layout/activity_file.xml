@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_neutral_variant70"
+    android:orientation="vertical"
+    tools:context=".FileActivity">
+
+    <EditText
+        android:id="@+id/fileNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="File name" />
+
+    <EditText
+        android:id="@+id/fileContentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="File content" />
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create file" />
+
+    <Button
+        android:id="@+id/appendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Append file" />
+
+    <Button
+        android:id="@+id/readButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read file" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete file" />
+
+    <TextView
+        android:id="@+id/fileOutputTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_secondary60"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewSequentialTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Sequential tasks:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewParallelTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewSequentialTasks"
+        android:layout_margin="16dp"
+        android:text="Parallel tasks:"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonSequential"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewParallelTasks"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Start sequential tasks" />
+
+    <Button
+        android:id="@+id/buttonParallel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSequential"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Start parallel tasks" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/buttonParallel"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/buttonLoadImage"
+        android:layout_width="112dp"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="15dp"
+        android:text="LI" />
+
+
+</RelativeLayout>

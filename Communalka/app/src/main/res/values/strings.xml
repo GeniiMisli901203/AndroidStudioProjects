@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Communalka</string>
+    <string name="info_text">Здесь будет расположена информация о работе приложения</string>
+
+    <string-array name="roles_array">
+        <item>User</item>
+        <item>Admin</item>
+    </string-array>
+    <string-array name="font_options">
+        <item>Default</item>
+        <item>Serif</item>
+        <item>Monospace</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

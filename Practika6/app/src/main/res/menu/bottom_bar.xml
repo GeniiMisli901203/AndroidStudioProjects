@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/main"
+        android:title="Главная" />
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/notifications"
+        android:title="Огурчики" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/settings"
+        android:title="Настройки" />
+
+</menu>

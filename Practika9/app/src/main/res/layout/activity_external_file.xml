@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/material_dynamic_neutral_variant70"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/editTextFileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Название файла"/>
+
+        <EditText
+            android:id="@+id/editTextFileContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Содержимое файла"/>
+
+        <Button
+            android:id="@+id/buttonCreateFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Создать файл"/>
+
+        <Button
+            android:id="@+id/buttonAppendToFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Добавить информацию"/>
+
+        <Button
+            android:id="@+id/buttonReadFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Прочитать файл"/>
+
+        <Button
+            android:id="@+id/buttonDeleteFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Удалить файл"/>
+
+        <TextView
+            android:id="@+id/textViewFileContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Содержимое файла"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

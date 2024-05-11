@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/material_dynamic_neutral_variant80"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test Input"
+        android:textSize="24sp"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_text_light_t1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Light T1"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/edit_text_light_t2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Light T2"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/edit_text_light_t3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Light T3"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/edit_text_hot_water"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hot Water"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/edit_text_cold_water"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cold Water"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="Save"
+        android:backgroundTint="@color/dark_green"/>
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="Back"
+        android:backgroundTint="@color/dark_red"/>
+
+    <TextView
+        android:id="@+id/text_view_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textSize="18sp"/>
+
+</LinearLayout>

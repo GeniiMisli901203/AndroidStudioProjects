@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Настройки"
+        android:textSize="24sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/font_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Шрифт:" />
+
+        <Spinner
+            android:id="@+id/font_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/font_label"
+            android:layout_marginStart="8dp"
+            android:entries="@array/font_options" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/brightness_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Яркость:" />
+
+        <SeekBar
+            android:id="@+id/brightness_seekbar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/brightness_label"
+            android:layout_marginStart="8dp"
+            android:max="255"
+            android:thumb="@android:drawable/ic_input_add" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/font_size_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Размер шрифта:" />
+
+        <SeekBar
+            android:id="@+id/font_size_seekbar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/font_size_label"
+            android:layout_marginStart="8dp"
+            android:max="100"
+            android:progress="24" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/info_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="Помощь" />
+
+</LinearLayout>

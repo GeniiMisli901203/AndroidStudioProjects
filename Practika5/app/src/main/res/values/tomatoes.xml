@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Tomatoes">
+        <item>Сиродж</item>
+        <item>Черри</item>
+        <item>Розовый гигант</item>
+        <item>Кристина</item>
+        <item>Черный крим</item>
+        <item>Голубой тигр</item>
+        <item>Желтый деревенский</item>
+        <item>Зебра</item>
+        <item>Розовая яблоневая</item>
+        <item>Белый тигр</item>
+        <item>Сливка</item>
+        <item>Медовая капля</item>
+        <item>Ароматное чудо</item>
+        <item>Янтарный кластер</item>
+        <item>Козий рог</item>
+        <item>Эвергрин</item>
+    </string-array>
+</resources>

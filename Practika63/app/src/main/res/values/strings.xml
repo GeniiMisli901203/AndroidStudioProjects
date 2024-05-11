@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Practika6</string>
+    <string name="drawer_open">Открыть</string>
+    <string name="drawer_close">Закрыть</string>
+</resources>

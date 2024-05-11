@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/material_dynamic_secondary95"
+    android:layout_height="match_parent"
+    tools:context=".Potato">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="603dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Картошка"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Карто́фель, или паслён клубнено́сный (лат. Solánum tuberósum), — вид многолетних клубненосных травянистых растений из рода Паслён (Solanum) семейства Паслёновые (Solanaceae). Клубни картофеля являются важным пищевым продуктом. Плоды ядовиты в связи с содержанием в них соланина. С потребительской точки зрения картофель является овощем."
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Современное научное название картофеля в 1596 году ввёл Каспар Баугин в работе Phytopinax, позже это название использовал Линней в своей работе Species Plantarum (1753).
+
+В разное время другими авторами публиковались иные научные названия, которые теперь составляют синонимику вида картофель.
+
+Русское слово «картофель» произошло от нем. Kartoffel, которое, в свою очередь, произошло от итал. tartufo, tartufolo — трюфель. Существует также разговорная форма «картошка»."
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Травянистое растение, достигающее в высоту более 1 метра.
+
+Стебель голый, ребристый. Часть стебля, погружённая в почву, выпускает длинные побеги (длиной 15—20, у некоторых сортов 40—50 см).
+
+Лист картофеля тёмно-зелёный, прерывисто-непарноперисторассечённый, состоит из конечной доли, нескольких пар (3—7) боковых долей, размещённых одна против другой, и промежуточных долек между ними. Непарная доля называется конечной, парные доли имеют порядковые названия — первая пара, вторая пара и т. д. (счёт ведётся от конечной доли). Доли и дольки сидят на стерженьках, прикреплённых к стержню, нижняя часть которого переходит в черешок. Около долей пар размещаются ещё более мелкие дольки."
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Цветки белые, розовые и фиолетовые, собраны щитком на верхушке стебля, чашечка и венчик пятираздельные[6].
+
+Из пазух зачаточных листьев в подземной части стебля отрастают подземные побеги — столоны, которые, утолщаясь на вершинах, дают начало новым клубням (видоизменённым побегам). На концах столонов развиваются клубни, которые, в сущности, не что иное, как вздувшиеся почки, вся масса которых состоит из тонкостенных гранёных клеток, наполненных крахмалом, а наружная часть состоит из тонкослойной пробковой ткани. Клубни созревают в августе — сентябре."
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Плод — многосемянная, тёмно-зелёная, ядовитая ягода диаметром 2 см, по форме напоминающая маленький помидор.
+
+В зелёных вегетативных частях растения содержится алкалоид соланин, который служит для защиты растения от поражения бактериями и некоторыми видами насекомых. В связи с этим позеленевшие клубни картофеля несъедобны, хотя удаление поверхности на значительную глубину (более 1 см) и более длительная термообработка сохраняют его съедобность.
+
+"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Картофель размножают вегетативно — небольшими клубнями или частями клубней (и для целей селекции — семенами или листоклубнями(черенкованием)). Они высаживаются на глубину от 5 до 10 см.
+
+Прорастание почек клубней в почве начинается при 5-8 °C (оптимальная температура для прорастания картофеля 15-20 °C). Для фотосинтеза, роста стеблей, листьев и цветения — 16-22 °C. Наиболее интенсивно клубни образуются при ночной температуре воздуха 10-13 °C. Высокая температура (ночная около 20 °C и выше) вызывает тепловое вырождение. Из семенных клубней развиваются растения с резко пониженной продуктивностью. Всходы и молодые растения повреждаются при заморозках в −2 °C. Транспирационный коэффициент картофеля в среднем 400—500."
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="32dp"
+                android:onClick="onBack"
+                android:text="Назад" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
