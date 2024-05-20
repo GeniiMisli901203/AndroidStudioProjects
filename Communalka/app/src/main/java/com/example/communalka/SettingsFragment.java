@@ -23,7 +23,6 @@ public class SettingsFragment extends Fragment {
     private SeekBar fontSizeSeekBar;
 
     public SettingsFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -31,7 +30,7 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
-        textView = view.findViewById(R.id.text_view); // Текстовое поле для применения шрифта
+        textView = view.findViewById(R.id.text_view);
 
         Spinner fontSpinner = view.findViewById(R.id.font_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.font_options, android.R.layout.simple_spinner_item);
@@ -99,9 +98,17 @@ public class SettingsFragment extends Fragment {
                 startActivity(new Intent(getActivity(), InfoActivity.class));
             }
         });
+        Button changePasswordButton = view.findViewById(R.id.change_password_button);
+        changePasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ChangePasswordActivity.class));
+            }
+        });
 
         return view;
     }
+
 
     private void setScreenBrightness(int brightness) {
         WindowManager.LayoutParams layoutParams = getActivity().getWindow().getAttributes();

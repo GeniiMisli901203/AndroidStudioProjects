@@ -43,18 +43,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.login_button);
         registerButton = findViewById(R.id.register_button);
 
-        Spinner roleSpinner = findViewById(R.id.role_spinner);
-        roleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selectedRole = position; // 0 for User, 1 for Admin
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                selectedRole = 0; // Default role is User
-            }
-        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 String password = passwordEditText.getText().toString();
 
                 if (email.isEmpty() || password.isEmpty()) {
-                    showErrorDialog("Please fill in all fields");
+                    showErrorDialog("Пожалуйста, заполните все поля");
                     return;
                 }
 
@@ -92,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                             null
                     );
                 } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "Login failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Ошибка входа: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -111,22 +100,20 @@ public class MainActivity extends AppCompatActivity {
 
                         if (hashedInputPassword.equals(storedHashedPassword)) {
                             if (role == 1) {
-                                // Start AdminActivity for administrators
                                 Intent intent = new Intent(MainActivity.this, AdminActivity.class);
                                 startActivity(intent);
                             } else {
-                                // Start UserActivity for regular users
                                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                                 startActivity(intent);
                             }
                         } else {
-                            Toast.makeText(MainActivity.this, "Login failed: Incorrect password", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Ошибка входа: неправильный пароль", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(MainActivity.this, "Error: Role, salt, or password column not found", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Ошибка", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "Login failed: User not found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Ошибка входа: не найден пользователь", Toast.LENGTH_SHORT).show();
                 }
 
                 if (cursor != null) {
@@ -135,14 +122,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Register button onClickListener
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 if (email.isEmpty() || password.isEmpty()) {
-                    showErrorDialog("Please fill in all fields");
+                    showErrorDialog("Пожалуйста, заполните все поля");
                     return;
                 }
                 registerUser(email, password, selectedRole);
@@ -166,18 +152,18 @@ public class MainActivity extends AppCompatActivity {
         try {
             long newRowId = db.insert(UserContract.UserEntry.TABLE_NAME, null, values);
             if (newRowId == -1) {
-                Toast.makeText(this, "Registration failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Ошибка регистрации", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Вы зарегистрировались", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Registration failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ошибка регистрации: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
     private void showErrorDialog(String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Error");
+        builder.setTitle("Ошибка");
         builder.setMessage(message);
         builder.setPositiveButton("OK", null);
         AlertDialog dialog = builder.create();
@@ -206,5 +192,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return Base64.encodeToString(hash, Base64.DEFAULT);
     }
-
 }

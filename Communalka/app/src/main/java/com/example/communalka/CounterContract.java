@@ -22,6 +22,10 @@ public class CounterContract {
         public static final String COLUMN_LIGHT_T3_PRICE = "light_t3_price";
         public static final String COLUMN_HOT_WATER_PRICE = "hot_water_price";
         public static final String COLUMN_COLD_WATER_PRICE = "cold_water_price";
+        public static final String COLUMN_PREVIOUS_SUM = "previous_sum";
+        public static final String COLUMN_DIFFERENCE = "difference";
+        public static final String COLUMN_TIMESTAMP = "timestamp";
+
 
     }
 }

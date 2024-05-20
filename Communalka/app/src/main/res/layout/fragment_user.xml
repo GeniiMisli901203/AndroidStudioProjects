@@ -25,22 +25,30 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter meter readings:"
+                android:text="Введите показания счетчика:"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/previous_light_t1_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Освещение Т1"
+                    android:layout_marginEnd="8dp" />
 
                 <EditText
                     android:id="@+id/light_t1_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Light T1"
+                    android:hint="Освещение T1"
                     android:inputType="numberDecimal" />
             </LinearLayout>
 
@@ -48,25 +56,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/previous_light_t2_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Освещение Т2"
+                    android:layout_marginEnd="8dp" />
 
                 <EditText
                     android:id="@+id/light_t2_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Light T2"
+                    android:hint="Освещение T2"
                     android:inputType="numberDecimal" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/previous_light_t3_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Освещение Т3"
+                    android:layout_marginEnd="8dp" />
 
                 <EditText
                     android:id="@+id/light_t3_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Light T3"
+                    android:hint="Освещение T3"
                     android:inputType="numberDecimal" />
             </LinearLayout>
 
@@ -74,12 +98,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/previous_hot_water_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Горячее водоснабжение"
+                    android:layout_marginEnd="8dp" />
 
                 <EditText
                     android:id="@+id/hot_water_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Hot Water"
+                    android:hint="Горячая вода"
                     android:inputType="numberDecimal" />
             </LinearLayout>
 
@@ -88,11 +120,19 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal">
 
+                <TextView
+                    android:id="@+id/previous_cold_water_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Холодное водоснабжение"
+                    android:layout_marginEnd="8dp" />
+
                 <EditText
                     android:id="@+id/cold_water_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Cold Water"
+                    android:hint="Холодная вода"
                     android:inputType="numberDecimal" />
             </LinearLayout>
 
@@ -102,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/dark_green"
-                android:text="Submit" />
+                android:text="Вычислить" />
 
             <TextView
                 android:id="@+id/result_text_view"
@@ -110,22 +150,38 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:text="Result:"
+                android:text="Сумма к оплате:"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
             <Button
                 android:id="@+id/button_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/red"
-                android:text="Logout"
+                android:text="Выход"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button_test_input" />
+            <TextView
+                android:id="@+id/last_submission_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="Показания были сданы:"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/last_submission_timestamp_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp" />
         </LinearLayout>
-
-
 
     </RelativeLayout>
 
@@ -138,3 +194,4 @@
         app:menu="@menu/activity_main_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
+

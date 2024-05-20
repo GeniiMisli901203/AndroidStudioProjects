@@ -38,7 +38,6 @@ public class SecondActivity extends AppCompatActivity {
 
         });
 
-        // Set default fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UserFragment()).commit();
     }
 }

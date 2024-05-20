@@ -13,5 +13,7 @@ public class UserContract {
         public static final String COLUMN_PASSWORD = "password";
         public static final String COLUMN_ROLE = "role";
         public static final String COLUMN_SALT = "salt";
+        public static final String COLUMN_NAME = "name";
+
     }
 }

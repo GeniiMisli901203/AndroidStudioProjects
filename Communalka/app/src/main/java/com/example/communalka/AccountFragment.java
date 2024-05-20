@@ -14,6 +14,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +38,9 @@ public class AccountFragment extends Fragment {
     private TextView errorMessageTextView;
     private static final String KEY_IMAGE_URI = "image_uri";
     private Uri imageUri;
+    private EditText nameEditText;
+    private Button saveNameButton;
+    private String userEmail;
 
     private CountersDatabaseHelper dbHelper;
     private DatabaseHelper dbHelper1;
@@ -53,8 +58,8 @@ public class AccountFragment extends Fragment {
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelable(KEY_IMAGE_URI, imageUri);
+        dbHelper1 = new DatabaseHelper(requireContext());
 
-        // Save the state of the TextView fields
         outState.putString("light_t1_text", lightT1TextView.getText().toString());
         outState.putString("light_t2_text", lightT2TextView.getText().toString());
         outState.putString("light_t3_text", lightT3TextView.getText().toString());
@@ -66,7 +71,8 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
-
+        nameEditText = view.findViewById(R.id.name_edit_text);
+        saveNameButton = view.findViewById(R.id.save_name_button);
         profileImageView = view.findViewById(R.id.profile_image_view);
         usernameTextView = view.findViewById(R.id.username_text_view);
 
@@ -76,7 +82,11 @@ public class AccountFragment extends Fragment {
         hotWaterTextView = view.findViewById(R.id.hot_water_text_view);
         coldWaterTextView = view.findViewById(R.id.cold_water_text_view);
         dbHelper = new CountersDatabaseHelper(requireContext());
+
         dbHelper1 = new DatabaseHelper(requireContext());
+        int userID=1;
+        userEmail = dbHelper1.getUserEmail(userID);
+
         imagePickerLauncher = registerForActivityResult(new GetContent(),
 
                 new ActivityResultCallback<Uri>() {
@@ -104,22 +114,35 @@ public class AccountFragment extends Fragment {
             imageUri = savedInstanceState.getParcelable(KEY_IMAGE_URI);
             profileImageView.setImageURI(imageUri);
         }
+        saveNameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = nameEditText.getText().toString();
+                int userId = dbHelper1.getUserId(userEmail); // Получаем userId
+                dbHelper1.saveUserName(name, userId); // Передаем name и userId
+                usernameTextView.setText(name);
+            }
+        });
+        String userEmail = dbHelper1.getUserEmail(userID);
+        if (userEmail != null) {
+            usernameTextView.setText(userEmail);
+        } else {
+            usernameTextView.setText("User not found");
+        }
 
         profileImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openImagePicker();
+                imagePickerLauncher.launch("image/*");
             }
         });
+
 
         updateUserData();
 
         return view;
     }
 
-    private void openImagePicker() {
-        imagePickerLauncher.launch("image/*");
-    }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -139,7 +162,6 @@ public class AccountFragment extends Fragment {
                 profileImageUri = Uri.parse(profileImageUriString);
                 profileImageView.setImageURI(profileImageUri);
             }
-            // Restore the state of the TextView fields
             String lightT1Text = savedInstanceState.getString("light_t1_text");
             String lightT2Text = savedInstanceState.getString("light_t2_text");
             String lightT3Text = savedInstanceState.getString("light_t3_text");
@@ -187,21 +209,23 @@ public class AccountFragment extends Fragment {
                 hotWaterTextView.setText("Hot water: " + hotWater);
                 coldWaterTextView.setText("Cold water: " + coldWater);
             } else {
-                errorMessageTextView.setText("No data");
+                Toast.makeText(requireContext(), "No data", Toast.LENGTH_SHORT).show();
+
             }
         } else {
-            errorMessageTextView.setText("No data");
+            Toast.makeText(requireContext(), "No data", Toast.LENGTH_SHORT).show();
+
         }
 
         cursor.close();
 
-        // Get the user's email
-        String userEmail = dbHelper1.getUserEmail();
-        if (userEmail != null) {
-            usernameTextView.setText(userEmail);
+        int userId = dbHelper1.getUserId(userEmail);
+
+        String userName = dbHelper1.getUserName(userId);
+        if (userName != null) {
+            usernameTextView.setText(userName);
         } else {
             usernameTextView.setText("User not found");
         }
     }
-
 }

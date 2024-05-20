@@ -17,7 +17,7 @@
             android:id="@+id/light_t1_price_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Light T1 price (7.85)"
+            android:hint="Цена освещения Т1 (7.85)"
             android:inputType="numberDecimal" />
     </LinearLayout>
 
@@ -30,7 +30,7 @@
             android:id="@+id/light_t2_price_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Light T2 price (2.98)"
+            android:hint="Цена освещения Т2 (2.98)"
             android:inputType="numberDecimal" />
     </LinearLayout>
 
@@ -43,7 +43,7 @@
             android:id="@+id/light_t3_price_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Light T3 price (6.43)"
+            android:hint="Цена освещения Т3 (6.43)"
             android:inputType="numberDecimal" />
     </LinearLayout>
 
@@ -56,7 +56,7 @@
             android:id="@+id/hot_water_price_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Hot water price (205.15)"
+            android:hint="Цена горячей воды (205.15)"
             android:inputType="numberDecimal" />
     </LinearLayout>
 
@@ -69,7 +69,7 @@
             android:id="@+id/cold_water_price_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Cold water price (42.3)"
+            android:hint="Цена холодной воды (42.3)"
             android:inputType="numberDecimal" />
     </LinearLayout>
 
@@ -79,19 +79,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/dark_green"
-        android:text="Save changes" />
+        android:text="Сохранить изменения" />
 
     <Button
         android:id="@+id/button_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/red"
-        android:text="Logout" />
+        android:text="Выход" />
 
     <Button
         android:id="@+id/button_test_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Test Input" />
+        android:text="Тестовый ввод" />
 
 </LinearLayout>

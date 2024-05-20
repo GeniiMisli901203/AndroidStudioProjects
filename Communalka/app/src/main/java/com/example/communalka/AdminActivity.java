@@ -1,6 +1,7 @@
 package com.example.communalka;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +29,7 @@ public class AdminActivity extends AppCompatActivity {
         hotWaterPriceEditText = findViewById(R.id.hot_water_price_edit_text);
         coldWaterPriceEditText = findViewById(R.id.cold_water_price_edit_text);
         saveChangesButton = findViewById(R.id.save_changes_button);
-
+        loadPrices();
         saveChangesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,11 +71,34 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
     }
-
     private void updatePrices(double lightT1Price, double lightT2Price, double lightT3Price, double hotWaterPrice, double coldWaterPrice) {
         CountersDatabaseHelper dbHelper = new CountersDatabaseHelper(this);
         dbHelper.updatePrices(lightT1Price, lightT2Price, lightT3Price, hotWaterPrice, coldWaterPrice);
         Toast.makeText(AdminActivity.this, "Prices updated successfully", Toast.LENGTH_SHORT).show();
     }
+    private void loadPrices() {
+        CountersDatabaseHelper dbHelper = new CountersDatabaseHelper(this);
+        Cursor priceCursor = dbHelper.getPrices();
 
+        if (priceCursor.moveToFirst()) {
+            int lightT1PriceIndex = priceCursor.getColumnIndex(CounterContract.CounterEntry.COLUMN_LIGHT_T1_PRICE);
+            int lightT2PriceIndex = priceCursor.getColumnIndex(CounterContract.CounterEntry.COLUMN_LIGHT_T2_PRICE);
+            int lightT3PriceIndex = priceCursor.getColumnIndex(CounterContract.CounterEntry.COLUMN_LIGHT_T3_PRICE);
+            int hotWaterPriceIndex = priceCursor.getColumnIndex(CounterContract.CounterEntry.COLUMN_HOT_WATER_PRICE);
+            int coldWaterPriceIndex = priceCursor.getColumnIndex(CounterContract.CounterEntry.COLUMN_COLD_WATER_PRICE);
+
+            double lightT1Price = (lightT1PriceIndex != -1) ? priceCursor.getDouble(lightT1PriceIndex) : 0;
+            double lightT2Price = (lightT2PriceIndex != -1) ? priceCursor.getDouble(lightT2PriceIndex) : 0;
+            double lightT3Price = (lightT3PriceIndex != -1) ? priceCursor.getDouble(lightT3PriceIndex) : 0;
+            double hotWaterPrice = (hotWaterPriceIndex != -1) ? priceCursor.getDouble(hotWaterPriceIndex) : 0;
+            double coldWaterPrice = (coldWaterPriceIndex != -1) ? priceCursor.getDouble(coldWaterPriceIndex) : 0;
+
+            lightT1PriceEditText.setText(String.valueOf(lightT1Price));
+            lightT2PriceEditText.setText(String.valueOf(lightT2Price));
+            lightT3PriceEditText.setText(String.valueOf(lightT3Price));
+            hotWaterPriceEditText.setText(String.valueOf(hotWaterPrice));
+            coldWaterPriceEditText.setText(String.valueOf(coldWaterPrice));
+        }
+        priceCursor.close();
+    }
 }
